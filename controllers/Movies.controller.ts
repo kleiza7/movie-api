@@ -2,17 +2,12 @@ import { Request, Response } from "express";
 import mongoose from "mongoose";
 import { Genre, Movie, TMDBMovie } from "../interfaces";
 import { MovieSchema } from "../schemas";
-import { MovieUtil } from "../utils/Movie.util";
+import { getGenres, getMovies } from "../utils/Movie.util";
 
 export class MoviesController {
-  constructor(private movieUtil: MovieUtil) {}
-
   async getMovies(_: Request, res: Response) {
     try {
-      const responses = await Promise.all([
-        this.movieUtil.getMovies(),
-        this.movieUtil.getGenres(),
-      ]);
+      const responses = await Promise.all([getMovies(), getGenres()]);
 
       const movies: TMDBMovie[] = responses[0].data.results.slice(0, 5);
 

@@ -3,7 +3,6 @@ import express, { Application } from "express";
 import mongoose from "mongoose";
 import { MoviesController } from "./controllers/Movies.controller";
 import { MoviesRouter } from "./routers/Movies.router";
-import { MovieUtil } from "./utils/Movie.util";
 
 dotenv.config();
 
@@ -33,9 +32,7 @@ class Server {
 
 const router = express.Router();
 
-const movieUtil = new MovieUtil();
-
-const moviesController = new MoviesController(movieUtil);
+const moviesController = new MoviesController();
 
 const moviesRouter = new MoviesRouter(router, moviesController);
 
