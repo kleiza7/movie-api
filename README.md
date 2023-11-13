@@ -40,7 +40,7 @@ This endpoint deletes the movie from the database that matches the id you sent i
 
 - Go to project folder.
 
-- Open terminal and run `npm install`
+- Open terminal and run `npm install`.
 
 - You must enter the [MongoDB connection string](https://www.mongodb.com/basics/mongodb-connection-string#:~:text=How%20to%20get%20your%20MongoDB,connection%20string%20for%20your%20cluster.) and TMDB API Key in the .env extension file in the project files. You can also change the port in this file if you want. By default, the application runs on port 5000.
 
