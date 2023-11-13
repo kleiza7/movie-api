@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { MoviesController } from "../controllers/Movies.controller";
 import { CreateMovieSchema } from "../joi-schemas";
-import { joiMiddleware } from "../middlewares/joi.middleware";
+import { joiMiddleware } from "../middlewares/Joi.middleware";
 
 export class MoviesRouter {
   constructor(
